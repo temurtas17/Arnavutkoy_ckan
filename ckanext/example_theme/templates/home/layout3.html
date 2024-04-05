@@ -1,0 +1,49 @@
+<div role="main" class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        {% block promoted %}
+          {% snippet 'home/snippets/promoted.html' %}
+        {% endblock %}
+      </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-5" style="padding-top: 5%;">
+        <h2 style="color: white;">Açıklamalar...</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+      </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-5">
+        {% block search %}
+          {% snippet 'home/snippets/search.html', search_facets=search_facets %}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+      </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-5">
+        {% block stats %}
+          {% snippet 'home/snippets/stats.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+<div role="main" class="module-feeds">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {% block featured_group %}
+          {% snippet 'home/snippets/featured_group.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

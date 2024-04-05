@@ -1,0 +1,6 @@
+{% ckan_extends %}
+
+{% block header_account_notlogged %}
+<li>{% link_for _('Log in'), named_route='user.login' %}</li>
+<li>{% link_for _('Kayıt Ol'), named_route='user.register', class_='sub' %}</li>
+{% endblock %}

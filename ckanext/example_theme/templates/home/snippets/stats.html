@@ -1,0 +1,24 @@
+{% set stats = h.get_site_statistics() %}
+
+<div class="module-stats">
+  <div class="card box">
+    <ul class="stats-list">
+      {% block stats_group %}
+      <li>
+        <a class="stats_a" href="{{ h.url_for('organization.index') }}">
+          <img src="/arnavutkoyLogo.png" alt="Organization Icon" class="list-icon">
+          <strong>{{ h.SI_number_span(stats.organization_count) }}</strong>
+          {{ _('Organization') }}
+        </a>
+      </li>
+      <li>
+        <a class="stats_a" href="{{ h.url_for('dataset.search') }}">
+          <img src="/arnavutkoyLogo.png" alt="Dataset Icon" class="list-icon">
+          <strong>{{ h.SI_number_span(stats.dataset_count) }}</strong>
+          {{ _('Dataset') }}
+        </a>
+      </li>
+      {% endblock %}
+    </ul>
+  </div>
+</div>
