@@ -4,18 +4,30 @@
   <div class="card box">
     <ul class="stats-list">
       {% block stats_group %}
-      <li>
+      <li class="lileft">
         <a class="stats_a" href="{{ h.url_for('organization.index') }}">
-          <img src="/arnavutkoyLogo.png" alt="Organization Icon" class="list-icon">
-          <strong>{{ h.SI_number_span(stats.organization_count) }}</strong>
-          {{ _('Organization') }}
+          <div class="row">
+            <div class="col-md-4">
+              <img src="/organizationLogo.png" alt="Organization Icon" class="list-icon">
+            </div>
+            <div class="col-md-8">
+              <strong>{{ h.SI_number_span(stats.organization_count) }}</strong><br>
+              {{ _('Organizasyon') }}
+            </div>
+          </div>
         </a>
       </li>
-      <li>
+      <li class="liright">
         <a class="stats_a" href="{{ h.url_for('dataset.search') }}">
-          <img src="/arnavutkoyLogo.png" alt="Dataset Icon" class="list-icon">
-          <strong>{{ h.SI_number_span(stats.dataset_count) }}</strong>
-          {{ _('Dataset') }}
+          <div class="row">
+            <div class="col-md-4">
+              <img src="/datasetLogo.png" alt="Dataset Icon" class="list-icon">
+            </div>
+            <div class="col-md-8">
+              <strong style="align-items: center;">{{ h.SI_number_span(stats.dataset_count) }}</strong><br>
+              {{ _('Veri Seti') }}
+            </div>
+          </div>
         </a>
       </li>
       {% endblock %}

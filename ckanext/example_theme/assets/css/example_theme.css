@@ -17,10 +17,12 @@ background-color: #eeeeee;
   padding: 0.6rem 0.9rem;
   color: #000;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
 }
 .homepage .hero {
   background: #4895f1;
-  min-height: 600px;
+  min-height: 500px;
   padding: 20px 0;
 }
 /* The text and icons in the user account info. */
@@ -68,6 +70,9 @@ background-color: #eeeeee;
 /* Remove the "box shadow" effect around various boxes on the page. */
 .box {
   box-shadow: none;
+  background-color: #4895f1;
+  margin-right: 3%;
+  margin-bottom: 15px;
 }
 /* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
    boxes. */
@@ -122,22 +127,29 @@ body {
 }
 
 .stats-list li {
-  margin-right: 100px; /* Add space between list items */
+  margin-right: 6%; /* Add space between list items */
 }
 
 .list-icon {
-  width: 80px; /* Adjust the width of the icon */
+  width: 100%; /* Adjust the width of the icon */
+}
+
+.list-icon2 {
+  width: 30px; /* Adjust the width of the icon */
   margin-right: 5px; /* Add space between icon and text */
 }
 
-.box, .wrapper {
-  background-color: #4895f1;
-}
-
 .stats_a {
+  width: 120%;
   color: white;
   font-size: 20px;
   background-color: #004290;
+  text-decoration: none;
+}
+
+.stats_b {
+  color: white;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -153,4 +165,97 @@ body {
 .search-form {
   margin-bottom: 2px;
   padding-bottom: 25px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.navbar-left {
+  padding-right: 10px;
+}
+
+.logoText {
+  font-size: 20px;
+  padding-left: 14px;
+  padding-top: 10px;
+  color: #004290;
+}
+
+.vertical-line {
+  border-left: 2px solid #004290; /* Adjust thickness and color as needed */
+  height: 60px; /* Adjust height as needed */
+}
+
+.masthead .navbar .logo img {
+  max-height: 90px;
+}
+
+.masthead .main-navbar ul {
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+.homepage .module-stats2 .card2 {
+  padding: 0.5rem 0.75rem;
+}
+
+.homepage .module-stats .card ul .lileft {
+  float: left;
+  width: 33%;
+  font-weight: 300;
+}
+
+.homepage .module-stats .card ul .liright {
+  float: right;
+  width: 33%;
+  font-weight: 300;
+}
+
+.homepage .module-stats2 .card2 .stats-list li {
+  padding-bottom: 10px;
+}
+
+.box2 {
+  background-color: #dddddd;
+}
+
+.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  max-width: 66.6%;
+}
+
+.search-form {
+  border-bottom: none;
+}
+
+.homepage .module-search .search-form {
+  border-radius: 0.25rem;
+  padding: 30px 20px;
+  padding-bottom: 0px;
+}
+
+.group-list .module-heading .custom-vertical-align {
+  height: 200px;
+}
+
+/* styles for categories */
+
+.module-image img {
+  max-width: 100px;
+  max-height: 100px;
+  vertical-align: middle;
+}
+
+.group-list .module-heading h3, .group-list .module-heading .h3 {
+  margin-bottom: 2px;
+  margin-top: 60px;
+}
+
+.group-list .module-heading h3 a, .group-list .module-heading .h3 a {
+  color: #004290;
+  font-size: 24px;
 }

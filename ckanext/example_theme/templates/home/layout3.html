@@ -47,3 +47,24 @@
     </div>
   </div>
 </div>
+
+{# Show a list of the site's most popular groups. #}
+<div role="main" class="popular_datasets">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Popüler Veri Setleri</h3>
+        <ul>
+          {% for dataset in h.example_theme_most_popular_datasets() %}
+            <li>{{ dataset.display_name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-4">
+        {% block stats2 %}
+          {% snippet 'home/snippets/stats2.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+{% set stats = h.get_site_statistics() %}
+
+<div class="module-stats2">
+  <div class="card2 box2">
+    <ul class="stats-list">
+      {% block stats_group %}
+      <li>
+        <a class="stats_b" href="{{ h.url_for('organization.index') }}">
+          <img src="/organizationLogo.png" alt="Organization Icon" class="list-icon2">
+          <strong>{{ h.SI_number_span(stats.organization_count) }}</strong>
+          {{ _('Organization') }}
+        </a>
+      </li>
+      <li>
+        <a class="stats_b" href="{{ h.url_for('dataset.search') }}">
+          <img src="/datasetLogo.png" alt="Dataset Icon" class="list-icon2">
+          <strong>{{ h.SI_number_span(stats.dataset_count) }}</strong>
+          {{ _('Dataset') }}
+        </a>
+      </li>
+      <li>
+        <a class="stats_b" href="{{ h.url_for('group.index') }}">
+          <img src="/categoryLogo.png" alt="Dataset Icon" class="list-icon2">
+          <strong>{{ h.SI_number_span(stats.group_count) }}</strong>
+          {{ _('group') }}
+        </a>
+      </li>
+      <li>
+        <a class="stats_b" href="{{ h.url_for('group.index') }}">
+          <img src="/categoryLogo.png" alt="Dataset Icon" class="list-icon2">
+          <strong>{{ h.SI_number_span(stats.group_count) }}</strong>
+          {{ _('Gösterim') }}
+        </a>
+      </li>
+      <li>
+        <a class="stats_b" href="{{ h.url_for('group.index') }}">
+          <img src="/categoryLogo.png" alt="Dataset Icon" class="list-icon2">
+          <strong>{{ stats }}</strong>
+          {{ _('İndirme') }}
+        </a>
+      </li>
+      {% endblock %}
+    </ul>
+  </div>
+</div>
