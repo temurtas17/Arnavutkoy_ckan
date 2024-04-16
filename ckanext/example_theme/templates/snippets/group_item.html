@@ -19,7 +19,7 @@
                 <div class="col-md-12 d-flex justify-content-center">
                     <div>
                         {% block group_item_header_title %}
-                            <h3 class="media-heading"><a href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">{{ group.title or group.name }}</a></h3>
+                            <h3 class="media-heading" style="text-align: center;"><a href="{{ h.url_for(group.type ~ '.read', id=group.name) }}">{{ group.title or group.name }}</a></h3>
                         {% endblock %}
                     </div>
                 </div>

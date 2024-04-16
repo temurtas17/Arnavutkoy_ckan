@@ -1,44 +1,38 @@
 <div role="main" class="hero">
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding: 50px 0px;">
       <div class="col-md-5">
-        {% block promoted %}
-          {% snippet 'home/snippets/promoted.html' %}
-        {% endblock %}
+        <img src="/gorsel.svg" alt="Organization Icon" class="list-icon">
       </div>
       <div class="col-md-2">
       </div>
       <div class="col-md-5" style="padding-top: 5%;">
-        <h2 style="color: white;">Açıklamalar...</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-      </div>
-      <div class="col-md-2">
-      </div>
-      <div class="col-md-5">
-        {% block search %}
-          {% snippet 'home/snippets/search.html', search_facets=search_facets %}
-        {% endblock %}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-      </div>
-      <div class="col-md-2">
-      </div>
-      <div class="col-md-5">
-        {% block stats %}
-          {% snippet 'home/snippets/stats.html' %}
-        {% endblock %}
+        <div class="row" style="padding-bottom: 40%; margin-left: 3%;">
+          <div class="col-md-12">
+            <h2 style="color: white;">Açıklamalar...</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            {% block search %}
+              {% snippet 'home/snippets/search.html', search_facets=search_facets %}
+            {% endblock %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            {% block stats %}
+              {% snippet 'home/snippets/stats.html' %}
+            {% endblock %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div role="main" class="module-feeds">
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding: 10px;">
       <div class="col-md-12">
         {% block featured_group %}
           {% snippet 'home/snippets/featured_group.html' %}
@@ -48,17 +42,28 @@
   </div>
 </div>
 
+<div class="container_header">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="dataset_header">Popüler Veri Setleri</h3>
+    </div>
+  </div>
+</div>
+
 {# Show a list of the site's most popular groups. #}
 <div role="main" class="popular_datasets">
-  <div class="container">
+  <div class="container container_dataset">
     <div class="row">
       <div class="col-md-8">
-        <h3>Popüler Veri Setleri</h3>
-        <ul>
+        <div class="row dataset_exp">
           {% for dataset in h.example_theme_most_popular_datasets() %}
-            <li>{{ dataset.display_name }}</li>
+            <div class="col-md-3 card_dataset box_dataset">
+              <a href="{{ h.url_for(dataset.type ~ '.read', id=dataset.name) }}">
+                {% snippet 'home/snippets/popular_datasets_exp.html', dataset=dataset %}
+              </a>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
       <div class="col-md-4">
         {% block stats2 %}

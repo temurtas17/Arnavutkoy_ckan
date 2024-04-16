@@ -15,11 +15,11 @@ def most_popular_datasets():
 
     # Get a list of all the site's groups from CKAN, sorted by number of
     # datasets.
-    datasets = toolkit.get_action('package_list')(
-        {}, {'sort': 'package_count desc', 'all_fields': True})
-
+    context = {'ignore_auth': True}
+    data_dict = {}  # İsteğe bağlı: veri filtreleme vb. için kullanılabilir
+    datasets = toolkit.get_action('current_package_list_with_resources')(context, data_dict)
     # Truncate the list to the 10 most popular groups only.
-    datasets = datasets[:10]
+    datasets = datasets[:6]
 
     return datasets
 

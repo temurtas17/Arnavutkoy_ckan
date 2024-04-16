@@ -74,6 +74,38 @@ background-color: #eeeeee;
   margin-right: 3%;
   margin-bottom: 15px;
 }
+
+.homepage .module-feeds {
+  padding: 2rem 0;
+  background: linear-gradient(
+    to top,
+    #f6f6f6 0%,
+    #f6f6f6 75%,
+    #4895f1 75%,
+    #4895f1 100%
+  );
+}
+
+.module-heading {
+  margin: 0;
+  padding: 0.5rem 25px;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  background-color: transparent;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.module-heading .module-image {
+  margin-top: 30%;
+}
+
+.boxgroups{
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
 /* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
    boxes. */
 .hero .box {
@@ -98,7 +130,7 @@ background-color: #eeeeee;
 }
 /* Add a border line between the top and bottom halves of the front page. */
 .homepage [role="main"] {
-  border-top: 1px solid rgb(204, 204, 204);
+  border-top: 0px;
 }
 
 
@@ -128,6 +160,7 @@ body {
 
 .stats-list li {
   margin-right: 6%; /* Add space between list items */
+  margin-bottom: 4%;
 }
 
 .list-icon {
@@ -139,12 +172,50 @@ body {
   margin-right: 5px; /* Add space between icon and text */
 }
 
-.stats_a {
-  width: 120%;
-  color: white;
-  font-size: 20px;
+.homepage .module-stats .card ul .lileft {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.homepage .module-stats .card ul .liright {
+  float: right;
+  width: 48%;
+  margin-right: 0%;
+}
+
+.stats_a .container_stats {
+  display: flex; /* Use flexbox to arrange items */
+  align-items: center; /* Center items vertically */
+}
+
+.stats_a .container_stats .container_img {
+  position:absolute;
+  z-index: 1;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.stats_a .container_stats .container_img img {
+  width: 40px;
+}
+
+.stats_a .container_stats .container_p {
+  position:absolute;
+  margin-left: 8%;
+  width: 35%;
+  height: 54px;
   background-color: #004290;
-  text-decoration: none;
+  border-radius: 5px;
+}
+
+.stats_a .container_stats .container_p p {
+  margin-left: 5%;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 }
 
 .stats_b {
@@ -201,19 +272,7 @@ body {
 }
 
 .homepage .module-stats2 .card2 {
-  padding: 0.5rem 0.75rem;
-}
-
-.homepage .module-stats .card ul .lileft {
-  float: left;
-  width: 33%;
-  font-weight: 300;
-}
-
-.homepage .module-stats .card ul .liright {
-  float: right;
-  width: 33%;
-  font-weight: 300;
+  padding: 10% 30%;
 }
 
 .homepage .module-stats2 .card2 .stats-list li {
@@ -221,7 +280,7 @@ body {
 }
 
 .box2 {
-  background-color: #dddddd;
+  background-color: transparent;
 }
 
 .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
@@ -258,4 +317,76 @@ body {
 .group-list .module-heading h3 a, .group-list .module-heading .h3 a {
   color: #004290;
   font-size: 24px;
+}
+
+/* Popüler Veri Setleri */
+
+.homepage .popular_datasets {
+  padding: 2rem 0;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 60%,
+    #4895f1 60%,
+    #4895f1 100%
+  );
+}
+
+.container_header {
+  max-width: 96%;
+}
+
+.container_dataset {
+  max-width: 84%;
+}
+
+.dataset_header {
+  font-size: 30px;
+  color: #004290;
+  padding: 30px 50px;
+}
+
+.box_dataset {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+  background-color: white;
+  margin-right: 5%;
+  margin-bottom: 50px;
+}
+
+.card_dataset {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.box_dataset h3 {
+  position: absolute;
+  right: -20px;
+  top: -15px;
+  background-color: #f6f6f6;
+  padding: 10px;
+  box-shadow: 0 0 0 2px rgba(15, 15, 15, 0.1);
+  border-radius: 6px;
+  color: #004290;
+}
+
+.box_dataset .dataset_notes {
+  padding-top: 35px;
+  margin-bottom: 60px;
+  color: #004290;
+}
+
+.box_dataset .dataset_resources {
+  position: absolute;
+  left: 10px;
+  bottom: -10px;
+  background-color: #3ea742;
+  padding: 4px 12px;
+  color: white;
 }

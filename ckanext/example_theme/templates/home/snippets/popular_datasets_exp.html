@@ -1,0 +1,7 @@
+<h3>{{ dataset.title }}</h3>
+{% if dataset.notes|length < 150 %}
+<p class="dataset_notes">{{ dataset.notes }}</p>
+{% else %}
+<p class="dataset_notes">{{ dataset.notes[:150] + "..." }}</p>
+{% endif %}
+<p class="dataset_resources"><strong>{{ dataset.resources[0].format }}</strong></p>
