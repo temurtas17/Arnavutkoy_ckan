@@ -1,7 +1,7 @@
 {% block group_item %}
   <section class="group-list module module-narrow module-shallow">
     {% block group_item_header %}
-      <header class="module-heading">
+      <header class="module-heading module-heading-group">
         {% set title = group.title or group.name %}
         <div class="container-fluid custom-vertical-align">
             <div class="row">
@@ -26,11 +26,6 @@
             </div>
         </div>
       </header>
-    {% endblock %}
-    {% block group_item_content %}
-      {% set list_class = "list-unstyled dataset-list" %}
-      {% set item_class = "dataset-item module-content" %}
-      {% snippet 'snippets/package_list.html', packages=group.packages, list_class=list_class, item_class=item_class %}
     {% endblock %}
   </section>
 {% endblock %}

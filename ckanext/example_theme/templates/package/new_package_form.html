@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block save_button_text %}
+  {% if form_style != 'edit' %}
+    {{ super() }}
+  {% else %}
+    {{ h.humanize_entity_type('package', pkg_dict.type, 'update label') or _('Veri Setini Güncelle') }}
+  {% endif %}
+{% endblock %}

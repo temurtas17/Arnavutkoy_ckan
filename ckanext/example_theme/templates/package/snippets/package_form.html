@@ -1,0 +1,25 @@
+{% ckan_extends %}
+
+{% block form_actions %}
+    <div class="form-actions">
+        {% block disclaimer %}
+            <p class="action-info small">
+                {%- trans -%}
+                Yukarıda seçtiğiniz <i>veri lisansı</i> yalnızca bu veri setine eklediğiniz 
+                kaynak dosyalarının içeriği için geçerlidir. Bu formu göndererek, forma girdiğiniz 
+                <i>meta veri</i> değerlerini <a href="http://opendatacommons.org/licenses/odbl/1-0/">Open Database License</a>
+                kapsamında yayınlamayı kabul etmiş olursunuz.
+                {%- endtrans -%}
+            </p>
+        {% endblock %}
+        {% block delete_button %}
+            {% if h.check_access('package_delete', {'id': data.id}) and not data.state == 'deleted' %}
+            <a class="btn btn-danger pull-left" href="{% url_for dataset_type ~ '.delete', id=data.id %}" data-module="confirm-action" data-module-content="{{ h.humanize_entity_type('package', dataset_type, 'delete confirmation') or _('Are you sure you want to delete this dataset?') }}">{% block delete_button_text %}{{ _('Delete') }}{% endblock %}</a>
+            {% endif %}
+        {% endblock %}
+        {% block save_button %}
+            <button class="btn btn-primary" type="submit" name="save">{% block save_button_text %}{{ _('İleri: Veri Ekle') }}{% endblock %}</button>
+        {% endblock %}
+        {{ form.required_message() }}
+    </div>
+{% endblock %}
