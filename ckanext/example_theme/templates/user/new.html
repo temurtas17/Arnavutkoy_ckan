@@ -1,0 +1,33 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Kayıt') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{{ h.nav_link(_('Kayıt Ol'), named_route='user.register') }}</li>
+{% endblock %}
+
+{% block primary_content %}
+  <article class="module">
+    <div class="module-content">
+      {% block primary_content_inner %}
+      <h1 class="page-heading">
+        {% block page_heading %}{{ _('Hesap Oluştur') }}{% endblock %}
+      </h1>
+      {{ form | safe }}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary_content %}
+  {% block help %}
+  <section class="module module-narrow module-shallow">
+    {% block help_inner %}
+    <h2 class="module-heading">{{ _('Why Sign Up?') }}</h2>
+    <div class="module-content">
+      <p>{% trans %}Veri setleri, kategoriler ve diğer heyecan verici şeyler oluşturun{% endtrans %}</p>
+    </div>
+    {% endblock %}
+  </section>
+  {% endblock %}
+{% endblock %}

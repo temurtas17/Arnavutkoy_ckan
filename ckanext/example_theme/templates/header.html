@@ -53,7 +53,7 @@
         {% block header_account_notlogged %}
         <li>{% link_for _('Log in'), named_route='user.login' %}</li>
         {% if h.check_access('user_create') %}
-        <li>{% link_for _('Register'), named_route='user.register', class_='sub' %}</li>
+        <li>{% link_for _('Kayıt Ol'), named_route='user.register', class_='sub' %}</li>
         {% endif %} {% endblock %}
       </ul>
     </nav>
@@ -102,9 +102,9 @@
 
 		        {{ h.build_nav_main(
                 ('home.about', _('About')),
-		            (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), ["dataset", "resource"]),
+		            (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Veri Setleri'), ["dataset", "resource"]),
 		            (org_type ~ '.index', h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
-		            (group_type ~ '.index', h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group'])
+		            (group_type ~ '.index', h.humanize_entity_type('group', group_type, 'main nav') or _('Kategoriler'), ['group'])
 		        ) }}
             <a class="iletisim-button" href="/iletisim" style="color: black; font-size: 16px; padding-left: 8px;">İletişim</a>
 	          {% endblock %}

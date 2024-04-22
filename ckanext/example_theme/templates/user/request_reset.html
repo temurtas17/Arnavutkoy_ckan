@@ -1,0 +1,46 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Şifrenizi Sıfırlayın') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Password Reset'), named_route='user.request_reset' %}</li>
+{% endblock %}
+
+{% block primary_content %}
+  <article class="module">
+    <div class="module-content">
+      {% block primary_content_inner %}
+      <h1 class="page-heading">{{ _('Şifrenizi Sıfırlayın') }}</h1>
+      {% block form %}
+        <form action="" method="post">
+          {{ h.csrf_input() }} 
+          <div class="form-group">
+            <label for="field-username">{{ _('Kullanıcı Adı ya da E-posta') }}</label>
+            <input id="field-username" class="control-medium form-control" name="user" value="" type="text" />
+          </div>
+          <div class="form-actions">
+            {% block form_button %}
+            <button class="btn btn-primary" type="submit" name="reset">{{ _("Şifreyi Sıfırla") }}</button>
+            {% endblock %}
+          </div>
+        </form>
+      {% endblock %}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary_content %}
+  {% block help %}
+  <section class="module module-narrow module-shallow">
+    {% block help_inner %}
+    <h2 class="module-heading">{{ _('How does this work?') }}</h2>
+    <div class="module-content">
+      <p>{% trans %}E-posta adresinizi veya kullanıcı adınızı kutuya girin, 
+        size yeni bir şifre girmeniz için bir bağlantı içeren bir e-posta göndereceğiz.
+        {% endtrans %}</p>
+    </div>
+    {% endblock %}
+  </section>
+  {% endblock %}
+{% endblock %}

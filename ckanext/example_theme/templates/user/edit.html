@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{% block breadcrumb_content %}
+  <li><a href="{{ h.url_for('user.index') }}">{{ _('Kullanıcılar') }}</a></li>
+  <li><a href="{{ h.url_for('user.read', id=user_dict.name) }}">{{ user_dict.display_name }}</a></li>
+  <li class="active"><a href="#">{{ _('Yönet') }}</a></li>
+{% endblock %}
+
+{% block secondary_content %}
+  <section class="module module-narrow module-shallow">
+    <h2 class="module-heading"><i class="fa fa-info-circle"></i> {{ _('Hesap Bilgileri') }}</h2>
+    <div class="module-content">
+      {% trans %}
+      Profiliniz, diğer kullanıcıların kim olduğunuzu ve ne yaptığınızı bilmelerini sağlar.
+      {% endtrans %}
+    </div>
+  </section>
+{% endblock %}
