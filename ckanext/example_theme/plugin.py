@@ -1,6 +1,8 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.common import CKANConfig
+from flask import Blueprint
+from ckanext.example_theme.controller import MyLogic
 
 
 # import ckanext.example_theme.cli as cli
@@ -28,7 +30,7 @@ class ExampleThemePlugin(plugins.SingletonPlugin):
     
     # plugins.implements(plugins.IAuthFunctions)
     # plugins.implements(plugins.IActions)
-    # plugins.implements(plugins.IBlueprint)
+    plugins.implements(plugins.IBlueprint)
     # plugins.implements(plugins.IClick)
     plugins.implements(plugins.ITemplateHelpers)
     # plugins.implements(plugins.IValidators)
@@ -40,6 +42,18 @@ class ExampleThemePlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config, "templates")
         toolkit.add_public_directory(config, "public")
         toolkit.add_resource("assets", "example_theme")
+
+    def get_blueprint(self):
+        blueprint = Blueprint(self.name, self.__module__)
+
+        blueprint.add_url_rule(
+            u'/iletisim',
+            u'do_something',
+            MyLogic.do_something,
+            methods=['GET']
+        )
+        
+        return blueprint
 
     
     # IAuthFunctions

@@ -1,10 +1,20 @@
-<!-- new_page.html -->
-<html>
-<head>
-    <title>Yeni Sayfa</title>
-</head>
-<body>
-    <h1>Yeni Sayfa</h1>
-    <p>Bu yeni sayfanın içeriği buraya gelecek.</p>
-</body>
-</html>
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('İletişim') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('İletişim'), named_route='/iletisim' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module" role="main">
+    <div class="module-content">
+      {% block about %}
+        <h1>İletişim</h1>
+        <p>İletişim adresimiz aşağıdadır...</p>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

@@ -73,6 +73,9 @@ background-color: #eeeeee;
   background-color: #cccccc;
 }
 
+.iletisim-button:hover {
+  text-decoration: none;
+}
 
 /* ===========================================
    The content in the middle of the front page
