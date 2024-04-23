@@ -16,3 +16,32 @@
             document.getElementById('field-resource-url').focus();
         "><i class="fa fa-globe"></i>{{ _('Link') }}</button>
 {% endblock %}
+
+{% block upload_controls %}
+    {% if is_upload %}
+    {# for existing uploads we show the file name in a readonly input box #}
+    <input type="checkbox" id="field-clear-upload" value="true">
+    <div class="upload-type">
+        <button type="button" class="btn btn-danger btn-remove-url"
+        onclick="
+            document.getElementById('field-clear-upload').checked = true;
+            document.getElementById('field-resource-upload').focus();
+        ">{{ _('Yüklemeyi Temizle') }}</button>
+        <label class="form-label">{{ _('Dosya') }}</label>
+        <div class="controls">
+        {% set existing_name = data.get('url', '').split('/')[-1].split('?')[0].split('#')[0] %}
+        <input value="{{ existing_name }}" class="form-control" readonly>
+        </div>
+    </div>
+    {% endif %}
+    <div class="upload-type">
+    {{ remove_button(
+        js="$('#field-resource-upload').replaceWith($('#field-resource-upload').val('').clone(true))") }}
+    {{ form.input(
+        'upload',
+        label=upload_label or _('Dosya'),
+        id='field-resource-upload',
+        type='file',
+        classes=['control-full']) }}
+    </div>
+{% endblock %}
