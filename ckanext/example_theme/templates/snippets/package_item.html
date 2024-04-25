@@ -1,0 +1,86 @@
+{#
+Displays a single of dataset.
+
+package        - A package to display.
+item_class     - The class name to use on the list item.
+hide_resources - If true hides the resources (default: false).
+
+Example:
+
+  {% snippet 'snippets/package_item.html', package=c.datasets[0] %}
+
+#}
+{% set title = package.title or package.name %}
+{% set dataset_id = package.id %}
+{% set notes = h.markdown_extract(package.notes, extract_length=180) %}
+
+{% block package_item %}
+  <li class="{{ item_class or "dataset-item" }}">
+    {% block content %}
+      <div class="dataset-content">
+        <div class="row">
+          <div class="col-md-5 d-flex align-items-center">
+            {% block heading %}
+              <h2 class="dataset-heading">
+                {% block heading_private %}
+                  {% if package.private %}
+                    <span class="dataset-private badge bg-secondary">
+                        <i class="fa fa-lock"></i>
+                        {{ _('Gizli') }}
+                    </span>
+                  {% endif %}
+                {% endblock %}
+                {% block heading_title %}
+                  <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}">
+                    {{title|truncate(36)}}
+                  </a>
+                {% endblock %}
+                {% block heading_meta %}
+                  {% if package.get('state', '').startswith('draft') %}
+                    <span class="badge bg-info">{{ _('Draft') }}</span>
+                  {% elif package.get('state', '').startswith('deleted') %}
+                    <span class="badge bg-danger">{{ _('Deleted') }}</span>
+                  {% endif %}
+                  {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
+                {% endblock %}
+              </h2>
+            {% endblock %}
+          </div>
+          <div class="col-md-2 d-flex align-items-center">
+            {% block notes %}
+              {% if package.resources[0] %}
+                <div>
+                    <h1 style="display: inline-block; font-size: 40px; padding-right: 10px;"><i class="fa fa-database" style="vertical-align: middle;"></i></h1>
+                    <h5 style="display: inline-block; color: #777777;">{{ (package.resources[0].size/1024)|round|int }} KB</h5>
+                </div>
+              {% endif %}
+            {% endblock %}
+          </div>
+          <div class="col-md-2 d-flex align-items-center">
+            {% block resources %}
+              {% if package.resources and not hide_resources %}
+                {% block resources_outer %}
+                  <ul class="dataset-resources list-unstyled">
+                    {% block resources_inner %}
+                      {% for resource in h.dict_list_reduce(package.resources[:2], 'format') %}
+                      <li>
+                        <a href="{{ h.url_for(package.type ~ '.read', id=package.name) }}" class="badge badge-default" data-format="{{ resource.lower() }}">{{ resource }}</a>
+                      </li>
+                      {% endfor %}
+                    {% endblock %}
+                  </ul>
+                {% endblock %}
+              {% endif %}
+            {% endblock %}
+          </div>
+          <div class="col-md-3">
+              {% if package.resources[0] %}
+                <h4 style="color: #999999;"><i class="fa fa-eye" style="color: #004290;"></i> {{ h.example_theme_my_package_show(dataset_id) }}</h4>
+                <p style="color: #999999;">Güncellenme Tarihi: {{package.metadata_modified[8:10]+"."+package.metadata_modified[5:7]+"."+package.metadata_modified[:4]}}</p>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </li>
+{% endblock %}

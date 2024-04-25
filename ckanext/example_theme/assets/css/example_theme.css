@@ -180,7 +180,7 @@ body {
 }
 
 .site-footer {
-  background: #cccccc;
+  background: #eeeeee;
   padding: 20px 0;
 }
 
@@ -529,60 +529,220 @@ body {
   max-width: 96%;
 }
 
-.container_dataset {
-  max-width: 84%;
+@media (min-width: 400px) {
+  .container_dataset {
+    max-width: 92%;
+  }
+  
+  .dataset_header {
+    font-size: 24px;
+    color: #004290;
+    padding: 30px 50px;
+  }
+  
+  .box_dataset {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    margin-right: 3%;
+    margin-bottom: 30px;
+  }
+  
+  .card_dataset {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .box_dataset h3 {
+    position: absolute;
+    right: -30px;
+    top: -15px;
+    background-color: #f6f6f6;
+    padding: 6px 12px;
+    box-shadow: 0 0 0 2px rgba(15, 15, 15, 0.1);
+    border-radius: 6px;
+    color: #004290;
+    font-size: small;
+  }
+  
+  .box_dataset .dataset_notes {
+    padding-top: 35px;
+    margin-bottom: 40px;
+    color: #004290;
+  }
+  
+  .box_dataset .dataset_resources {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    background-color: #3ea742;
+    padding: 4px 12px;
+    color: white;
+  }
+  
+  .box_dataset .div_resources {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+  }
+  
+  .box_dataset .div_resources .dataset_resources2{
+    display: inline-block;
+    background-color: #3ea742;
+    padding: 4px 12px;
+    color: white;
+    margin-right: 5px;
+  }
 }
 
-.dataset_header {
-  font-size: 30px;
-  color: #004290;
-  padding: 30px 50px;
+@media (min-width: 1540px) {
+  .container_dataset {
+    max-width: 84%;
+  }
+  
+  .dataset_header {
+    font-size: 30px;
+    color: #004290;
+    padding: 30px 50px;
+  }
+  
+  .box_dataset {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    margin-right: 5%;
+    margin-bottom: 50px;
+  }
+  
+  .card_dataset {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .box_dataset h3 {
+    position: absolute;
+    right: -30px;
+    top: -15px;
+    background-color: #f6f6f6;
+    padding: 8px 20px;
+    box-shadow: 0 0 0 2px rgba(15, 15, 15, 0.1);
+    border-radius: 6px;
+    color: #004290;
+    font-size: medium;
+  }
+  
+  .box_dataset .dataset_notes {
+    padding-top: 35px;
+    margin-bottom: 60px;
+    color: #004290;
+  }
+  
+  .box_dataset .dataset_resources {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    background-color: #3ea742;
+    padding: 4px 12px;
+    color: white;
+  }
+  
+  .box_dataset .div_resources {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+  }
+  
+  .box_dataset .div_resources .dataset_resources2{
+    display: inline-block;
+    background-color: #3ea742;
+    padding: 4px 12px;
+    color: white;
+    margin-right: 5px;
+  }
 }
 
-.box_dataset {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
-  background-color: white;
-  margin-right: 5%;
-  margin-bottom: 50px;
-}
-
-.card_dataset {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.box_dataset h3 {
-  position: absolute;
-  right: -20px;
-  top: -15px;
-  background-color: #f6f6f6;
-  padding: 10px 30px;
-  box-shadow: 0 0 0 2px rgba(15, 15, 15, 0.1);
-  border-radius: 6px;
-  color: #004290;
-  font-size: large;
-}
-
-.box_dataset .dataset_notes {
-  padding-top: 35px;
-  margin-bottom: 60px;
-  color: #004290;
-}
-
-.box_dataset .dataset_resources {
-  position: absolute;
-  left: 10px;
-  bottom: -10px;
-  background-color: #3ea742;
-  padding: 4px 12px;
-  color: white;
+@media (min-width: 2100px) {
+  .container_dataset {
+    max-width: 84%;
+  }
+  
+  .dataset_header {
+    font-size: 30px;
+    color: #004290;
+    padding: 30px 50px;
+  }
+  
+  .box_dataset {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    margin-right: 5%;
+    margin-bottom: 50px;
+  }
+  
+  .card_dataset {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .box_dataset h3 {
+    position: absolute;
+    right: -20px;
+    top: -15px;
+    background-color: #f6f6f6;
+    padding: 10px 30px;
+    box-shadow: 0 0 0 2px rgba(15, 15, 15, 0.1);
+    border-radius: 6px;
+    color: #004290;
+    font-size: large;
+  }
+  
+  .box_dataset .dataset_notes {
+    padding-top: 35px;
+    margin-bottom: 60px;
+    color: #004290;
+  }
+  
+  .box_dataset .dataset_resources {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    background-color: #3ea742;
+    padding: 4px 12px;
+    color: white;
+  }
+  
+  .box_dataset .div_resources {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+  }
+  
+  .box_dataset .div_resources .dataset_resources2{
+    display: inline-block;
+    background-color: #3ea742;
+    padding: 4px 12px;
+    color: white;
+    margin-right: 5px;
+  }
 }
 
 /* Other Pages */
@@ -700,4 +860,109 @@ body {
   border-bottom: 1px solid #777;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+/* Dataset Items */
+
+.dataset-resources li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0px;
+}
+
+.badge[data-format=xls], .badge[data-format*=xls] {
+  background-color: #004290;
+}
+
+.badge[data-format=png], .badge[data-format*=png] {
+  background-color: #3ea742;
+}
+
+.badge[data-format=jpeg], .badge[data-format*=jpeg] {
+  background-color: #02999e;
+}
+
+.badge[data-format=ods], .badge[data-format*=ods] {
+  background-color: #004290;
+}
+
+.badge[data-format=csv], .badge[data-format*=csv] {
+  background-color: #3ea742;
+}
+
+.dataset-heading a {
+  color: #333;
+  font-size: 20px;
+  color: #777777;
+}
+
+/* Footer */
+
+@media (min-width: 400px) {
+  .flex-container-footer {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    align-items: center;
+    padding-left: 1%;
+  }
+
+  .flex-container-footer a {
+    margin-right: 1%;
+    font-size: 16px;
+  }
+
+  #logofooter {
+    height: 48px;
+  }
+}
+
+@media (min-width: 900px) {
+  .flex-container-footer {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    padding-left: 5%;
+  }
+
+  .flex-container-footer a {
+    margin-right: 3%;
+    font-size: 24px;
+  }
+
+  #logofooter {
+    height: 60px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .flex-container-footer {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+    padding-left: 5%;
+  }
+
+  .flex-container-footer a {
+    margin-right: 3%;
+    font-size: 30px;
+  }
+
+  #logofooter {
+    height: 80px;
+  }
 }

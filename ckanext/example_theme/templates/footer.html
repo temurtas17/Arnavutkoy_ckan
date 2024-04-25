@@ -1,1 +1,58 @@
-{% ckan_extends %}
+<footer class="site-footer">
+    <div class="container">
+      {% block footer_content %}
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-1 footer-links">
+            {% block footer_nav %}
+                <a href="/"><img src="/arnavutkyLogo.png" alt="Arnavutköy Bel." id="logofooter"></a>
+            {% endblock %}
+            </div>
+            <div class="col-md-5">
+                {% block footer_links %}
+                    <div class="flex-container-footer">
+                        <a class="iletisim-button" href="{{ h.url_for('home.about') }}" style="color: black; font-size: 16px; padding-left: 8px;">{{ _('Hakkımızda') }}</a>
+                        <a class="iletisim-button" href="/iletisim" style="color: black; font-size: 16px; padding-left: 8px;">İletişim</a>
+                        <a class="iletisim-button" href="/acikveri" style="color: black; font-size: 16px; padding-left: 8px;">Açık Veri Nedir</a>
+                    </div>
+                {% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="flex-container-footer">
+                    <a href="https://twitter.com/ArnavutkoyBel?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://twitter.com/ArnavutkoyBel?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/ArnavutkoyBel?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/ArnavutkoyBel?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      {% endblock %}
+    </div>
+  </footer>
+  <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-12">
+            {% block footer_attribution %}
+                <div style="margin-top: 20px;">
+                    <h5 style="display: inline-block;">{% trans %}<strong>Powered by</strong> <a href="http://ckan.org">CKAN</a>{% endtrans %}</h5>
+                    <img src="/ckan1.png" alt="Ckan Icon" style="display: inline-block; padding-left: 3px;">
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center" style="height: 20px;">
+        <div class="col-md-12">
+            <p>© 2024 Arnavutköy Belediyesi, Her hakkı saklıdır.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-12">
+            {% block footer_links_ckan %}
+                {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+                <h1><a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></h1>
+            {% endblock %}
+        </div>
+    </div>
+  </div>
+  

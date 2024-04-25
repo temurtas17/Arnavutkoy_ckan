@@ -12,6 +12,22 @@ from ckanext.example_theme.controller import MyLogic
 #     action, auth, validators
 # )
 
+def my_package_show(id):
+    context = {'ignore_auth': True}
+    data_dict = {'id': id, 'include_tracking': True}  # İsteğe bağlı: veri filtreleme vb. için kullanılabilir
+    # CKAN'in package_show fonksiyonunu çağırın
+    package = toolkit.get_action('package_show')(context, data_dict)
+
+    # package içindeki tracking_summary bilgisini alın
+    tracking_summary = package.get('tracking_summary')
+
+    # tracking_summary'i kullanarak istediğiniz işlemleri yapın
+    # Örnek olarak, tracking_summary'yi bir değişkene atayabilirsiniz
+    my_variable = tracking_summary['total']
+
+    # Sonucu döndürün
+    return my_variable
+
 def most_popular_datasets():
     '''Return a sorted list of the groups with the most datasets.'''
 
@@ -52,6 +68,13 @@ class ExampleThemePlugin(plugins.SingletonPlugin):
             MyLogic.do_something,
             methods=['GET']
         )
+
+        blueprint.add_url_rule(
+            u'/acikveri',
+            u'show_acikveri',
+            MyLogic.show_acikveri,
+            methods=['GET']
+        )
         
         return blueprint
 
@@ -86,7 +109,8 @@ class ExampleThemePlugin(plugins.SingletonPlugin):
         # Template helper function names should begin with the name of the
         # extension they belong to, to avoid clashing with functions from
         # other extensions.
-        return {'example_theme_most_popular_datasets': most_popular_datasets}
+        return {'example_theme_most_popular_datasets': most_popular_datasets,
+                'example_theme_my_package_show': my_package_show}
 
     # IValidators
 

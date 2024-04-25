@@ -1,0 +1,42 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Açık Veri') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Açık Veri'), named_route='/acikveri' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module" role="main">
+    <div class="module-content">
+      {% block about %}
+        <h2>Veri Nedir?</h2>
+        <p>Ham (işlenmemiş) gerçek enformasyon parçacığına verilen addır. Yani, işlenmemiş, yorum yapmaya imkân vermeyecek düzeyde sistemleştirilmiş ham bilgidir. 
+            Bir verinin tek başına bir anlamı ve işlevi bulunmamaktadır. Veriler toplandıktan sonra gruplanarak, sıralanarak ve özetlenerek, elle ya da bilgisayarla 
+            işlenip enformasyona dönüştürüldüklerinde anlam kazanmakta; ait oldukları bağlamı açıklama gücüne kavuşmaktadır. Problem çözme ya da karar verme gibi bir 
+            amaca hizmet edebilecek duruma gelmektedir.Veriler ölçüm, sayım, deney, gözlem ya da araştırma yolu ile elde edilmektedir. Ölçüm ya da sayım yolu ile 
+            toplanan ve sayısal bir değer bildiren veriler nicel veriler, sayısal bir değer bildirmeyen veriler de nitel veriler olarak adlandırılmaktadır. 
+            Buna göre verilerYapılandırılmış, yapılandırılmamış ve yarı yapılandırılmış veriler,Ücretli-ücretsiz veriler,Statik, dinamik veriler, Açık veriler 
+            Büyük veriler olarak gruplandırılabilirler.</p>
+        <h2>Veri Seti Nedir?</h2>
+        <p>Veri setleri, kategoriler ve değişkenler arasındaki ilişkileri gösteren ilgili veri kümelerinin koleksiyonlarıdır. Bir veri kümesinin en temel temsili 
+            bir tablodur. Tablonun her bir sütunu belirli bir değişkeni temsil eder. Her satır, o sütunun değişkeninin belirli bir değerine karşılık gelir.</p>
+        <h2>Açık Veri Nedir?</h2>
+        <p>Açık veriler, herkes tarafından serbestçe kullanılabilen, yeniden kullanılabilen ve yeniden dağıtılabilen verilerdir. 
+            Open Knowledge Foundation Açık veri, Open Definition’na göre: Herkesin özgürce ve yeniden kullanabileceği ve yeniden dağıtılabileceği, yalnızca nitelik ve 
+            paylaşım gereksinimine tabi olan veridir. The Open Definition, bunun ne anlama geldiğine ilişkin kesin ayrıntılar verir. 
+            En önemlilerini özetlemek gerekirse: Uygunluk ve Erişim: Veriler, bir bütün olarak ve makul bir yeniden üretim maliyetini aşmayacak şekilde, 
+            tercihen İnternet üzerinden indirilerek bulunmalıdır. Verilerin ayrıca uygun ve değiştirilebilir bir biçimde bulunması gerekir. Yeniden Kullanım ve 
+            Yeniden Dağıtım: Veriler, diğer veri setleri ile karıştırılması da dâhil olmak üzere, yeniden kullanıma ve yeniden dağıtılmaya izin veren şartlar altında 
+            sağlanmalıdır. Evrensel Katılım: Herkes kullanabilmeliyken, yeniden kullanabilir ve yeniden dağıtabilir olmalıdır- çalışma alanlarına veya kişi ve gruplara 
+            karşı herhangi bir ayrımcılık olmamalıdır. Örneğin,ticari kullanımını veya belirli amaçlarla (örneğin yalnızca eğitimde) kullanım kısıtlamalarını engelleyen 
+            ticari olmayan kısıtlamalara izin verilmemektedir. Açık veriler için birlikte çalışabilirlik önemlidir, çünkü farklı bileşenlerin birlikte çalışmasına 
+            izin verir açık veriler. Birlikte çalışabilirlik, çeşitli sistemlerin ve kuruluşların birlikte çalışabilme yeteneğini gösterir 
+            (iş birliği içerisinde çalışma). Açık veriler için birlikte çalışabilirlik ise, farklı veri setlerini birlikte kullanma veya karıştırma becerisidir. 
+            Açık veri; farklı veri setlerini bir araya getirme ve dolayısıyla daha iyi ürün ve hizmetler geliştirme olanağını size verir.</p>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
