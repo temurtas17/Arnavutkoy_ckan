@@ -2,7 +2,7 @@
 
 {% block basic_fields %}
     {% set attrs = {'data-module': 'slug-preview-target', 'class': 'form-control'} %}
-    {{ form.input('title', label=_('Name'), id='field-name', placeholder=h.humanize_entity_type('group', group_type, 'name placeholder') or _('Grup İsmi'), value=data.title, error=errors.title, classes=['control-full'], attrs=attrs) }}
+    {{ form.input('title', label=_('Name'), id='field-name', placeholder=h.humanize_entity_type('group', group_type, 'name placeholder') or _('Kategori İsmi'), value=data.title, error=errors.title, classes=['control-full'], attrs=attrs) }}
 
     {# Perhaps these should be moved into the controller? #}
     {% set prefix = h.url_for(group_type + '.read', id='') %}
@@ -12,7 +12,7 @@
 
     {{ form.prepend('name', label=_('URL'), prepend=prefix, id='field-url', placeholder=_('my-' + group_type), value=data.name, error=errors.name, attrs=attrs, is_required=true) }}
 
-    {{ form.markdown('description', label=_('Description'), id='field-description', placeholder=h.humanize_entity_type('group', group_type, 'description placeholder') or _('Grup hakkında kısa bir açıklama...'), value=data.description, error=errors.description) }}
+    {{ form.markdown('description', label=_('Description'), id='field-description', placeholder=h.humanize_entity_type('group', group_type, 'description placeholder') or _('Kategori hakkında kısa bir açıklama...'), value=data.description, error=errors.description) }}
 
     {% set is_upload = data.image_url and not data.image_url.startswith('http') %}
     {% set is_url = data.image_url and data.image_url.startswith('http') %}

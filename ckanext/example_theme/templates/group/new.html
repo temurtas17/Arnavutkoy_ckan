@@ -9,7 +9,7 @@
 
 {% block breadcrumb_content %}
   <li>{{ h.nav_link(
-        h.humanize_entity_type('group', group_type, 'breadcrumb') or _('Groups'),
+        h.humanize_entity_type('group', group_type, 'breadcrumb') or _('Kategoriler'),
         named_route=group_type+'.index') }}</li>
   <li class="active">
     {{ h.nav_link(

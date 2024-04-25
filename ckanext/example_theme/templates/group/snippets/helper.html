@@ -1,0 +1,27 @@
+{#
+    Displays a sidebard module with information about group.
+  
+    group_type    - The type of group.
+  
+    Example:
+  
+    {% snippet "group/snippets/helper.html", group_type=group_type %}
+  
+    #}
+  
+  <div class="module module-narrow module-shallow">
+    <h2 class="module-heading">
+      <i class="fa fa-info-circle"></i>
+      {{ _('Kategori Nedir?') }}
+    </h2>
+    <div class="module-content">
+      <p>
+        {% trans %}
+        Veri setlerinin koleksiyonlarını oluşturmak ve yönetmek için Açık Veri Kategorilerini kullanabilirsiniz. 
+        Bu, belirli bir proje veya ekip için veya belirli bir tema için veri setlerini kataloglamak veya insanların kendi yayınlanmış veri setlerini 
+        bulmasına ve aramasına yardımcı olmanın bir yolu olabilir.
+        {% endtrans %}
+      </p>
+    </div>
+  </div>
+  

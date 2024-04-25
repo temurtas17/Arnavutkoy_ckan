@@ -37,9 +37,9 @@ Example:
                 {% endblock %}
                 {% block heading_meta %}
                   {% if package.get('state', '').startswith('draft') %}
-                    <span class="badge bg-info">{{ _('Draft') }}</span>
+                    <span class="badge bg-info">{{ _('Taslak') }}</span>
                   {% elif package.get('state', '').startswith('deleted') %}
-                    <span class="badge bg-danger">{{ _('Deleted') }}</span>
+                    <span class="badge bg-danger">{{ _('Silinmiş') }}</span>
                   {% endif %}
                   {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
                 {% endblock %}
