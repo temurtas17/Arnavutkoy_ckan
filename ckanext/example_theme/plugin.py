@@ -37,9 +37,24 @@ def most_popular_datasets():
     data_dict = {}  # İsteğe bağlı: veri filtreleme vb. için kullanılabilir
     datasets = toolkit.get_action('current_package_list_with_resources')(context, data_dict)
     # Truncate the list to the 10 most popular groups only.
-    datasets = datasets[:6]
+    dictionary_list = []
+    datasetsnew = []
+    total = 0
 
-    return datasets
+    for dataset in datasets:
+        temp = my_package_show(dataset['id'])
+        tempdict = {"data":dataset,"value":temp}
+        dictionary_list.append(tempdict)
+        total = total + temp
+
+    sorted_list = sorted(dictionary_list, key=lambda x: x["value"], reverse=True)
+
+    for list in sorted_list:
+        datasetsnew.append(list['data'])
+
+    datasetsnew = datasetsnew[:6]
+
+    return [datasetsnew, total]
 
 class ExampleThemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
