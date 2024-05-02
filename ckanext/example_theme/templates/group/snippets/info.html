@@ -22,7 +22,7 @@
     {% block description %}
     {% if group.description %}
       <p class="description">
-        {{ h.markdown_extract(group.description, 80) }} <strong>{% link_for _('read more'), named_route='group.about', id=group.name %}</strong>
+        {{ h.markdown_extract(group.description, 80) }} <strong>{% link_for _('daha fazla'), named_route='group.about', id=group.name %}</strong>
       </p>
     {% endif %}
     {% endblock %}

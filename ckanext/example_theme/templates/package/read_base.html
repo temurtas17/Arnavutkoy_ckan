@@ -5,3 +5,17 @@
     {% link_for _('Yönet'), named_route=pkg.type ~ '.edit', id=pkg.name, class_='btn btn-light', icon='wrench' %}
   {% endif %}
 {% endblock %}
+
+{% block content_primary_nav %}
+  {{ h.build_nav_icon(dataset_type ~ '.read', _('Dataset'),  id=pkg.name, icon='sitemap') }}
+  {{ h.build_nav_icon(dataset_type ~ '.groups', h.humanize_entity_type('group', default_group_type, 'content tab') or _('Kategoriler'), id=pkg.name, icon='users') }}
+{% endblock %}
+
+{% block package_organization %}
+  {% if pkg.organization %}
+    {% set org = h.get_organization(pkg.organization.id) %}
+    {% snippet "snippets/organization.html", organization=org, has_context_title=true %}
+  {% endif %}
+{% endblock %}
+
+{% block package_social %}{% endblock %}
