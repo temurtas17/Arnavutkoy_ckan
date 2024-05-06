@@ -9,7 +9,11 @@
       <div class="col-md-5" style="padding-top: 5%;">
         <div class="row" style="padding-bottom: 40%; margin-left: 3%;">
           <div class="col-md-12">
-            <h2 style="color: white;">Açıklamalar...</h2>
+            {% if g.site_intro_text %}
+              <h2 style="color: white;">{{ h.render_markdown(g.site_intro_text) }}</h2>
+            {% else %}
+              <h2 style="color: white;">Açıklamalar...</h2>
+            {% endif %}
           </div>
         </div>
         <div class="row">

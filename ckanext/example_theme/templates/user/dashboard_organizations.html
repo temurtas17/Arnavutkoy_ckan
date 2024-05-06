@@ -4,7 +4,7 @@
 
 {% block page_primary_action %}
   {% if h.check_access('organization_create') %}
-    {% link_for h.humanize_entity_type('organization', group_type, 'add link') or _('Add Organization'), named_route=group_type ~ '.new', class_="btn btn-primary", icon="plus-square" %}
+    {% link_for _('Add Organization'), named_route='organization' ~ '.new', class_="btn btn-primary", icon="plus-square" %}
   {% endif %}
 {% endblock %}
 
@@ -20,7 +20,7 @@
     <p class="empty">
       {{ h.humanize_entity_type('organization', group_type, 'you not member') or _('Herhangi bir organizasyona üye değilsiniz.') }}
       {% if h.check_access('organization_create') %}
-        {% link_for _('Şimdi bir tane oluşturalım mı?'), named_route=group_type ~ '.new' %}
+        {% link_for _('Şimdi bir tane oluşturalım mı?'), named_route='organization' ~ '.new' %}
       {% endif %}
     </p>
   {% endif %}

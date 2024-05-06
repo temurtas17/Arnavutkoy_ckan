@@ -6,7 +6,7 @@
 {% endif %}
 {% if dataset.resources|length == 1 %}
 <p class="dataset_resources"><strong>{{ dataset.resources[0].format }}</strong></p>
-{% elif dataset.resources|length == 2 %}
+{% elif dataset.resources|length > 1 %}
 <div class="div_resources">
     <p class="dataset_resources2"><strong>{{ dataset.resources[0].format }}</strong></p>
     <p class="dataset_resources2"><strong>{{ dataset.resources[1].format }}</strong></p>
