@@ -11,8 +11,17 @@
     <div class="module-content">
       {% block about %}
         <h1>İletişim</h1>
-        <p>İletişim adresimiz aşağıdadır...</p>
+        <p style="font-size: 18px;"><i class="fas fa-map-marker-alt"></i> Taşoluk Mahallesi Kazım Karabekir Caddesi No:88 Arnavutköy / İstanbul</p>
+        <p style="font-size: 18px;"><i class="fa-solid fa-envelope"></i> arnavutkoy@arnavutkoy.bel.tr</p>
+        <p style="font-size: 18px;"><i class="fa-solid fa-phone"></i> 444 4 597</p>
+        <p style="font-size: 18px;"><i class="fa-brands fa-whatsapp"></i> 0530 919 50 00</p>
       {% endblock %}
+      <hr>
+      <div class="flex-container-maps">
+        <gmp-map center="41.185629218363964, 28.719577861162822" zoom="10" map-id="DEMO_MAP_ID">
+          <gmp-advanced-marker position="41.185629218363964, 28.719577861162822" title="My location"></gmp-advanced-marker>
+        </gmp-map>
+      </div>
     </div>
   </article>
 {% endblock %}

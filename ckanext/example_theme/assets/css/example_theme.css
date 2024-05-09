@@ -355,7 +355,7 @@ body {
 
 .stats_b {
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -407,7 +407,7 @@ body {
 }
 
 .homepage .module-stats2 .card2 {
-  padding: 10% 30%;
+  padding: 10% 20%;
 }
 
 .homepage .module-stats2 .card2 .stats-list li {
@@ -965,4 +965,31 @@ body {
   #logofooter {
     height: 80px;
   }
+}
+
+.flex-container-graph {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #f6f6f6;
+}
+
+.flex-container-graph > div {
+  background-color: white;
+  width: 450px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 75px;
+}
+
+.flex-container-maps{
+  height: 400px;
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+gmp-map {
+  height: 100%;
 }

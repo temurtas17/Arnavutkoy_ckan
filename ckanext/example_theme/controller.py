@@ -6,3 +6,6 @@ class MyLogic():
     
     def show_acikveri():
         return render_template("acikveri.html")
+    
+    def show_nasil():
+        return render_template("nasil.html")

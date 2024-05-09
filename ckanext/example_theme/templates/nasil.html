@@ -1,0 +1,28 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Nasıl Kullanılır') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Nasıl Kullanılır'), named_route='/nasil' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module" role="main">
+    <div class="module-content">
+      {% block about %}
+      <h1>Nasıl Kullanılır</h1>
+      <h3>5 Adımda Arnavutköy Açık Veri Portalı!</h3>
+      <ul style="font-size: 16px;">
+        <li>Arnavutköy Açık Veri Portalına kaydolarak portalı kullanmaya başlayabilirsin. Portala kaydolduktan sonra eğer bir organizasyona üyeysen o organizasyonun gizli
+            veri setlerini görüntüleyebilir ve veri seti oluşturabilirsin.</li>
+        <li>Anasayfa'da bulunan arama kutucuğu ile ihtiyaç duyduğun veri setini arayabilir, Yine organizasyon ve kategorileri de ilgili sayfalarda bulunan arama kutucuğunu kullanarak filtreleyebilirsin.</li>
+        <li>Arnavutköy Açık Veri Portalında sunulan kategorileri inceleyebilir, ilgi duyduğun kategori içerisinde bulunan veri setleri ile proje geliştirebilirsin.</li>
+        <li>Yapacağın çalışma için kullanabileceğin veri setleri ile ilgili kararsızsan, en çok görüntülenen veya en sık güncellenen veri setlerini incelemek sana ilham verebilir.</li>
+        <li>İlgilendiğin veri setlerini indirerek daha detaylı incelemelerde bulunabilirsin.</li>
+      </ul>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

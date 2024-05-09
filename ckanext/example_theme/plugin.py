@@ -90,6 +90,13 @@ class ExampleThemePlugin(plugins.SingletonPlugin):
             MyLogic.show_acikveri,
             methods=['GET']
         )
+
+        blueprint.add_url_rule(
+            u'/nasil',
+            u'show_nasil',
+            MyLogic.show_nasil,
+            methods=['GET']
+        )
         
         return blueprint
 

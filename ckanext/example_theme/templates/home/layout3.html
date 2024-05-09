@@ -77,3 +77,394 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+<div class="flex-container-graph">
+  <div>
+    <div id="item1" style="width: 450px;height:400px;"></div>
+    <script type="text/javascript">
+      // Initialize the echarts instance based on the prepared dom
+      var myChart1 = echarts.init(document.getElementById('item1'));
+
+      // Specify the configuration items and data for the chart
+      var option = {
+        tooltip: {
+        trigger: 'item'
+        },
+        legend: {
+        top: '5%',
+        left: 'center'
+        },
+        series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 25,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 1048, name: 'Search Engine' },
+            { value: 735, name: 'Direct' },
+            { value: 580, name: 'Email' },
+            { value: 484, name: 'Union Ads' },
+            { value: 300, name: 'Video Ads' }
+          ]
+        }
+        ]
+      };
+
+      // Display the chart using the configuration items and data just specified.
+      myChart1.setOption(option);
+    </script>
+  </div>
+  <div>
+    <div id="item2" style="width: 450px;height:400px;"></div>
+    <script type="text/javascript">
+      // Initialize the echarts instance based on the prepared dom
+      var myChart2 = echarts.init(document.getElementById('item2'));
+
+      // Specify the configuration items and data for the chart
+      var option = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            // Use axis to trigger tooltip
+            type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+          }
+        },
+        legend: {},
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'value'
+        },
+        yAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        series: [
+          {
+            name: 'Direct',
+            type: 'bar',
+            stack: 'total',
+            label: {
+              show: true
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [320, 302, 301, 334, 390, 330, 320]
+          },
+          {
+            name: 'Mail Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+              show: true
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: 'Affiliate Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+              show: true
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: 'Video Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+              show: true
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [150, 212, 201, 154, 190, 330, 410]
+          },
+          {
+            name: 'Search Engine',
+            type: 'bar',
+            stack: 'total',
+            label: {
+              show: true
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [820, 832, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      };
+
+      // Display the chart using the configuration items and data just specified.
+      myChart2.setOption(option);
+    </script>
+  </div>
+  <div>
+    <div id="item3" style="width: 450px;height:400px;"></div>
+    <script type="text/javascript">
+      // Initialize the echarts instance based on the prepared dom
+      var myChart3 = echarts.init(document.getElementById('item3'));
+
+      // Specify the configuration items and data for the chart
+      var option = {
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+              color: 'rgba(180, 180, 180, 0.2)'
+            }
+          }
+        ]
+      };
+
+      // Display the chart using the configuration items and data just specified.
+      myChart3.setOption(option);
+    </script>
+  </div>  
+  <div>
+    <div id="item4" style="width: 450px;height:400px;"></div>
+    <script type="text/javascript">
+      // Initialize the echarts instance based on the prepared dom
+      var myChart4 = echarts.init(document.getElementById('item4'));
+
+      // Specify the configuration items and data for the chart
+      const data = [
+        { value: 800, name: 'A' },
+        { value: 635, name: 'B' },
+        { value: 580, name: 'C' },
+        { value: 484, name: 'D' },
+        { value: 300, name: 'E' },
+        { value: 200, name: 'F' }
+      ];
+      const defaultPalette = [
+        // '#51689b', '#ce5c5c', '#fbc357', '#8fbf8f', '#659d84', '#fb8e6a', '#c77288', '#786090', '#91c4c5', '#6890ba'
+        '#5470c6',
+        '#91cc75',
+        '#fac858',
+        '#ee6666',
+        '#73c0de',
+        '#3ba272',
+        '#fc8452',
+        '#9a60b4',
+        '#ea7ccc'
+      ];
+      const radius = ['30%', '80%'];
+      const pieOption = {
+        series: [
+          {
+            type: 'pie',
+            id: 'distribution',
+            radius: radius,
+            label: {
+              show: false
+            },
+            universalTransition: true,
+            animationDurationUpdate: 1000,
+            data: data
+          }
+        ]
+      };
+      const parliamentOption = (function () {
+        let sum = data.reduce(function (sum, cur) {
+          return sum + cur.value;
+        }, 0);
+        let angles = [];
+        let startAngle = -Math.PI / 2;
+        let curAngle = startAngle;
+        data.forEach(function (item) {
+          angles.push(curAngle);
+          curAngle += (item.value / sum) * Math.PI * 2;
+        });
+        angles.push(startAngle + Math.PI * 2);
+        function parliamentLayout(startAngle, endAngle, totalAngle, r0, r1, size) {
+          let rowsCount = Math.ceil((r1 - r0) / size);
+          let points = [];
+          let r = r0;
+          for (let i = 0; i < rowsCount; i++) {
+            // Recalculate size
+            let totalRingSeatsNumber = Math.round((totalAngle * r) / size);
+            let newSize = (totalAngle * r) / totalRingSeatsNumber;
+            for (
+              let k = Math.floor((startAngle * r) / newSize) * newSize;
+              k < Math.floor((endAngle * r) / newSize) * newSize - 1e-6;
+              k += newSize
+            ) {
+              let angle = k / r;
+              let x = Math.cos(angle) * r;
+              let y = Math.sin(angle) * r;
+              points.push([x, y]);
+            }
+            r += size;
+          }
+          return points;
+        }
+        return {
+          series: {
+            type: 'custom',
+            id: 'distribution',
+            data: data,
+            coordinateSystem: undefined,
+            universalTransition: true,
+            animationDurationUpdate: 1000,
+            renderItem: function (params, api) {
+              var idx = params.dataIndex;
+              var viewSize = Math.min(api.getWidth(), api.getHeight());
+              var r0 = ((parseFloat(radius[0]) / 100) * viewSize) / 2;
+              var r1 = ((parseFloat(radius[1]) / 100) * viewSize) / 2;
+              var cx = api.getWidth() * 0.5;
+              var cy = api.getHeight() * 0.5;
+              var size = viewSize / 50;
+              var points = parliamentLayout(
+                angles[idx],
+                angles[idx + 1],
+                Math.PI * 2,
+                r0,
+                r1,
+                size + 3
+              );
+              return {
+                type: 'group',
+                children: points.map(function (pt) {
+                  return {
+                    type: 'circle',
+                    autoBatch: true,
+                    shape: {
+                      cx: cx + pt[0],
+                      cy: cy + pt[1],
+                      r: size / 2
+                    },
+                    style: {
+                      fill: defaultPalette[idx % defaultPalette.length]
+                    }
+                  };
+                })
+              };
+            }
+          }
+        };
+      })();
+      let currentOption = (option = pieOption);
+      setInterval(function () {
+        currentOption = currentOption === pieOption ? parliamentOption : pieOption;
+        myChart4.setOption(currentOption);
+      }, 2000);
+    </script>
+  </div>
+  <div>
+    <div id="item5" style="width: 450px;height:400px;"></div>
+    <script type="text/javascript">
+      // Initialize the echarts instance based on the prepared dom
+      var myChart5 = echarts.init(document.getElementById('item5'));
+
+      // Specify the configuration items and data for the chart
+      var option = {
+        title: {
+          text: ''
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            name: 'Email',
+            type: 'line',
+            stack: 'Total',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: 'Union Ads',
+            type: 'line',
+            stack: 'Total',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: 'Video Ads',
+            type: 'line',
+            stack: 'Total',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: 'Direct',
+            type: 'line',
+            stack: 'Total',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: 'Search Engine',
+            type: 'line',
+            stack: 'Total',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      };
+
+      // Display the chart using the configuration items and data just specified.
+      myChart5.setOption(option);
+    </script>
+  </div>
+</div>

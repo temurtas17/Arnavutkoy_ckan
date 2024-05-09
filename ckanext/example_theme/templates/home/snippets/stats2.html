@@ -26,21 +26,7 @@
         </a>
       </li>
       <li>
-        <a class="stats_b" href="{{ h.url_for('group.index') }}">
-          <img src="/arama.svg" alt="Dataset Icon" class="list-icon2">
-          <strong>{{ h.SI_number_span(stats.group_count) }}</strong>
-          {{ _('Arama') }}
-        </a>
-      </li>
-      <li>
-        <a class="stats_b" href="{{ h.url_for('group.index') }}">
-          <img src="/indir.svg" alt="Dataset Icon" class="list-icon2">
-          <strong>{{ h.SI_number_span(stats.organization_count) }}</strong>
-          {{ _('İndir') }}
-        </a>
-      </li>
-      <li>
-        <a class="stats_b" href="{{ h.url_for('group.index') }}">
+        <a class="stats_b" href="{{ h.url_for('dataset.search') }}">
           <img src="/goruntuleme_2.svg" alt="Dataset Icon" class="list-icon2">
           <strong>{{ h.example_theme_most_popular_datasets()[1] }}</strong>
           {{ _('Veri Seti Görüntüleme') }}
